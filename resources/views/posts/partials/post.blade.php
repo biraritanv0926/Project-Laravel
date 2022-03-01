@@ -1,4 +1,4 @@
-<h3><a href="{{ route('posts.show', ['post' => $post->id]) }}">{{ $post->title }}</a></h3>
+{{--  <h3><a href="{{ route('posts.show', ['post' => $post->id]) }}">{{ $post->title }}</a></h3>
 
 <div class="mb-3">
     <a href="{{ route('posts.edit', ['post' => $post->id]) }}" class="btn btn-primary">Edit</a>
@@ -7,4 +7,5 @@
     @method('DELETE')
     <div><input type="submit" value="Delete!" class="btn btn-primary"></div>
 </form> 
-</div>
+</div>  --}}
+

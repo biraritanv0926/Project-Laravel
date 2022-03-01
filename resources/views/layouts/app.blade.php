@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+{{--  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{--  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <script src="{{ mix('js/app.js') }}" defer></script>  --}}
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="{{ mix('js/app.js') }}" defer></script>  
     <title>Laravel App - @yield('title')</title>
 </head>
 <body>
     <div> 
         @yield('content')
-    </div>
+    </div>  --}}
 
     {{--  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4">
         <h5 class="my-0 mr-md-auto font-weight-normal">Laravel App</h5>
@@ -28,6 +28,21 @@
         {{ session('status') }}
         @endif
     </div>
-    </div>      --}}
+    </div>      
+</body>
+</html>--}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laravel App - @yield('title')</title>
+</head>
+<body>
+    <div>
+        @yield('content')
+    </div>
 </body>
 </html>

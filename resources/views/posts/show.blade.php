@@ -1,29 +1,25 @@
-@extends('layouts.app')
-@section('title', $post['title'])
-{{--  @section('title', $post->title)  --}}
+@extends('layout')
 
 @section('content')
-@if($post['is_new'])
-<div>A new blog post using ifffff</div>
-@else
-<div>A blog post is old! using elseif/else</div>
-@endif
+    <h1>{{ $post->title }}</h1>
+    <p>{{ $post->content }}</p>
 
-@unless($post['is_new'])
-<div>It is an old post.....using  unlesss</div>
-@endunless
+    <p>Added {{ $post->created_at->diffForHumans() }}</p>
 
-<h1>{{ $post['title'] }}</h1>
-<p>{{ $post['content'] }}</p>
+    @if ((new Carbon\Carbon())->diffInMinutes($post->created_at) < 5 )
+        <strong>New!</strong>
+    @endif
 
-@isset($post['has_comments'])
-<div>The post has some comments... using isset</div>
-@endisset
-    {{--  <h1>{{ $posts->title }}</h1>
-    <p>{{ $posts->content }}</p>
-    <p>Added {{ $post->created_at->difforHumans() }}</p>
+    <h4>Comments</h4>
 
-@if(now()->diffInMinutes($post->created_at) < 5)
-<div class="alert alert-info">New!</div>
-@endif  --}}
-@endsection
+    @forelse($post->comments as $comment)
+        <p>
+            {{ $comment->content }}
+        </p>
+        <p class="text-muted">
+            added {{ $comment->created_at->diffForHumans() }}
+        </p>
+    @empty
+        <p>No comments yet!</p>
+    @endforelse
+@endsection('content')
